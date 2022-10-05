@@ -2,6 +2,7 @@ version: '3.8'
 services:
   web:
     build: .
+    container_name: hccm-test
     volumes:
       - .:/app
     #command: pip install django==3.1.14|grep pip
@@ -29,4 +30,4 @@ services:
     #command: find /app
     command: python /code/manage.py runserver 0.0.0.0:8000
     ports:
-      - 8002:8000
+      - 8005:8000
