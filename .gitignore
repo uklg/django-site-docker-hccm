@@ -1,3 +1,4 @@
 *.sw?
 sendgrid.env
 db.sqlite3
+*~
