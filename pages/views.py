@@ -40,7 +40,6 @@ def contactViewD(request):
                         keyid=splitkey[0].strip()
                         keypass=splitkey[1].strip()
                         return(keyid,keypass)
-                    creds=getsendmailapikey()
 
                     #message = Mail(
                     #    from_email='richmurdo@gmail.com',
@@ -49,6 +48,7 @@ def contactViewD(request):
                     #    html_content=f"<strong>Name: {submit_name} <br> From email: {submit_email} \
                     #                   <br> {submit_number} <br> {submit_message} </strong>")
                     try:
+                        creds=getsendmailapikey()
                         client = boto3.client(
                             'ses',
                             region_name='us-east-1',
