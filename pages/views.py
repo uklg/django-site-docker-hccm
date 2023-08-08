@@ -56,11 +56,30 @@ def contactViewD(request):
                             aws_secret_access_key=creds[1]
                         )
 
-                        
-                        response = sg.send(message)
-                        print(response.status_code)
-                        print(response.body)
-                        print(response.headers)
+
+                        response = client.send_email(
+                            Destination={
+                                'ToAddresses': ['richmurdo@gmail.com'],
+                            },
+                            Message={
+                                'Body': {
+                                    'Text': {
+                                        'Charset': 'UTF-8',
+                                        'Data': 'email body string',
+                                    },
+                                },
+                                'Subject': {
+                                    'Charset': 'UTF-8',
+                                    'Data': 'email subject string',
+                                },
+                            },
+                            Source='richmurdo@gmail.com',
+                        )
+
+
+
+
+                        print(response)
                     except Exception as e:
                         print(e.message)
 
