@@ -23,7 +23,15 @@ https://www.tooplate.com/view/2126-antique-cafe
 
 -->
 </head>
-<body>    
+<body> 
+
+    <script>
+    function confirmReceiptFunction() {
+      alert("Thank you. We have received your message. We will get in touch shortly");
+    }
+    </script>
+
+
     <!-- Intro -->
     <div id="intro" class="parallax-window" data-parallax="scroll" data-image-src="{% static "img/antique-cafe-bg-01.jpg" %}">
         <nav id="tm-nav" class="fixed w-full">
@@ -183,7 +191,7 @@ https://www.tooplate.com/view/2126-antique-cafe
                     {{ form.as_p }}
 
                         <div class="text-right">
-                            <button type="submit" class="text-white hover:text-yellow-500 transition">Send it</button>
+                            <button onclick="confirmReceiptFunction()" type="submit" class="text-white hover:text-yellow-500 transition">Send it</button>
                         </div>                        
                       </form>
                 </div>
