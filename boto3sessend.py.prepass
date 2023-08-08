@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+
+import boto3
+
+client = boto3.client(
+    'ses',
+    region_name='us-east-1',
+    # needs to not be hardcoded and not have global access
+    aws_access_key_id='',
+    aws_secret_access_key=''
+)
+
+
+response = client.send_email(
+    Destination={
+        'ToAddresses': ['richmurdo@gmail.com'],
+    },
+    Message={
+        'Body': {
+            'Text': {
+                'Charset': 'UTF-8',
+                'Data': 'email body string',
+            },
+        },
+        'Subject': {
+            'Charset': 'UTF-8',
+            'Data': 'email subject string',
+        },
+    },
+    Source='richmurdo@gmail.com',
+)
+
+print(response)
