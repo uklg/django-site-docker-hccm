@@ -4,8 +4,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.conf import settings
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+import boto3
 
 from django.urls import resolve
 
@@ -33,23 +32,31 @@ def contactViewD(request):
                 else:
                     #pass
                     def getsendmailapikey():
-                        fd=open('sendgrid.env','r')
+                        fd=open('aws.env','r')
                         keyline=fd.readlines()[0].strip()
-                        delimiter="'"
+                        delimiter=":"
 
                         splitkey=keyline.split(delimiter)
-                        keysection=splitkey[-2].strip()
-                        return(keysection)
-                    getsendmailapikey()
+                        keyid=splitkey[0].strip()
+                        keypass=splitkey[1].strip()
+                        return(keyid,keypass)
+                    creds=getsendmailapikey()
 
-                    message = Mail(
-                        from_email='email@em8384.saturdaynightdj.co.uk',
-                        to_emails='rmu@live.co.uk',
-                        subject='Message from JMDemolition',
-                        html_content=f"<strong>Name: {submit_name} <br> From email: {submit_email} \
-                                       <br> {submit_number} <br> {submit_message} </strong>")
+                    #message = Mail(
+                    #    from_email='richmurdo@gmail.com',
+                    #    to_emails='richmurdo@gmail.com',
+                    #    subject='Message from holly website',
+                    #    html_content=f"<strong>Name: {submit_name} <br> From email: {submit_email} \
+                    #                   <br> {submit_number} <br> {submit_message} </strong>")
                     try:
-                        sg = SendGridAPIClient(getsendmailapikey())
+                        client = boto3.client(
+                            'ses',
+                            region_name='us-east-1',
+                            aws_access_key_id=creds[0]
+                            aws_secret_access_key=creds[1]
+                        )
+
+                        
                         response = sg.send(message)
                         print(response.status_code)
                         print(response.body)
