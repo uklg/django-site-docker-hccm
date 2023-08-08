@@ -1,4 +1,5 @@
 *.sw?
 sendgrid.env
+amazon.env
 db.sqlite3
 *~
