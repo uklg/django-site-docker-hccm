@@ -78,10 +78,10 @@ def contactViewD(request):
                     except Exception as e:
                         print(e.message)
                     try:
-                      with open("mails.txt", "a") as myfile:
-                      myfile.write(submit_name, submit_email, submit_number, submit_message)
+                        with open("mails.txt", "a") as myfile:
+                        myfile.write(submit_name, submit_email, submit_number, submit_message)
                     except Exception as e:
-                       print(e.message)
+                        print(e.message)
 
                     print('not debug no email api setup') 
                     print(submit_name, submit_email, submit_number, submit_message, ['admin@example.com'])
