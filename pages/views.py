@@ -79,7 +79,7 @@ def contactViewD(request):
                         print(e.message)
                     try:
                         with open("mails.txt", "a") as myfile:
-                        myfile.write(submit_name, submit_email, submit_number, submit_message)
+                            myfile.write(submit_name, submit_email, submit_number, submit_message)
                     except Exception as e:
                         print(e.message)
 
