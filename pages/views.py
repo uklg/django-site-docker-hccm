@@ -59,8 +59,8 @@ def contactViewD(request):
                                 'Body': {
                                     'Text': {
                                         'Charset': 'UTF-8',
-                                        'Data': f"<strong>Name: {submit_name} <br> From email: {submit_email} \
-                                        <br> {submit_number} <br> {submit_message} </strong>",
+                                        'Data': f"Name: {submit_name} \nFrom email: {submit_email}\n \
+                                         {submit_number}\n{submit_message}",
                                     },
                                 },
                                 'Subject': {
