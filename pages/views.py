@@ -52,7 +52,7 @@ def contactViewD(request):
                         client = boto3.client(
                             'ses',
                             region_name='us-east-1',
-                            aws_access_key_id=creds[0]
+                            aws_access_key_id=creds[0],
                             aws_secret_access_key=creds[1]
                         )
 
