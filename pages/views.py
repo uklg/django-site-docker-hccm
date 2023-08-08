@@ -65,7 +65,7 @@ def contactViewD(request):
                                 },
                                 'Subject': {
                                     'Charset': 'UTF-8',
-                                    'Data': 'email subject string',
+                                    'Data': 'From hollyschildminding website',
                                 },
                             },
                             Source='richmurdo@gmail.com',
