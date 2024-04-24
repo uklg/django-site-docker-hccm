@@ -45,7 +45,7 @@ def contactViewD(request):
                         creds=getsendmailapikey()
                         client = boto3.client(
                             'ses',
-                            region_name='us-east-1',
+                            region_name='eu-north-1',
                             aws_access_key_id=creds[0],
                             aws_secret_access_key=creds[1]
                         )
@@ -53,7 +53,7 @@ def contactViewD(request):
 
                         response = client.send_email(
                             Destination={
-                                'ToAddresses': ['richmurdo@gmail.com','hollycaston@gmail.com'],
+                                'ToAddresses': ['richmurdo@gmail.com'],
                             },
                             Message={
                                 'Body': {
