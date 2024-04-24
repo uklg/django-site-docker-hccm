@@ -53,7 +53,7 @@ def contactViewD(request):
 
                         response = client.send_email(
                             Destination={
-                                'ToAddresses': ['richmurdo@gmail.com'],
+                                'ToAddresses': ['richmurdo@gmail.com','hollycaston@gmail.com'],
                             },
                             Message={
                                 'Body': {
@@ -68,7 +68,7 @@ def contactViewD(request):
                                     'Data': 'From hollyschildminding website',
                                 },
                             },
-                            Source='richmurdo@gmail.com',
+                            Source='sender@saturdaynightdj.co.uk',
                         )
 
 
