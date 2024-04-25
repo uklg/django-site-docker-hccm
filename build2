@@ -1,0 +1,69 @@
+#!/bin/bash
+
+
+projectname=hccm-test
+accessport=8005
+
+#docker stop ${projectname}
+#docker rm ${projectname}
+#docker rmi $(docker images |grep '${projectname}')
+
+
+
+
+
+#if [ ! -f /tmp/build-dsd-fw2 ]
+#then
+#    echo 'no firewall yet'
+#    sudo iptables -I INPUT 2 -i lo -p tcp --dport 8000:8999 -j ACCEPT
+#    touch /tmp/build-dsd-fw2
+#
+#else
+#    echo 'firewall in place'
+
+
+#¬fi
+
+
+#todo copy a secrets directory and fail if it does not exist (could be param with environment name, staging live etc)
+
+
+
+
+
+# this is handled by the compose and was probably useful for populating db initially 
+#docker build -t django-site-docker-models .
+# echo takes a while to load up 5 seconds or such
+#f irefox http://127.0.0.1:8002/
+
+
+docker build . -t $projectname
+
+
+docker compose up --build -d
+#docker compose up --build -d
+
+
+
+sys/exit
+
+
+docker exec -it ${projectname} /code/start.sh
+
+echo running test to see if string is present at the newly spun up site:
+curl -L 127.0.0.1:${accessport} | grep "Child Minder" ;echo exit code: $(echo $?)
+
+echo running test to see if string is present at the newly pun up Admin site:
+curl -L 127.0.0.1:${accessport}/admin | grep "Django administration" ;echo exit code: $(echo $?)
+
+
+echo 'css may take a while to start so wait 5 seconds'
+
+
+
+firefox --private-window http://127.0.0.1:${accessport}/
+
+echo admin may need their own browser space for cookies to work:
+
+firefox --private-window http://127.0.0.1:${accessport}/admin/
+
