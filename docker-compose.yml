@@ -2,8 +2,8 @@ version: '3.8'
 services:
   web:
     #build: .
-    image: hccm-test:latest
-    container_name: hccm-test
+    image: murdochr/hccm
+    container_name: murdochr/hccm
     volumes:
       - .:/app
     #command: pip install django==3.1.14|grep pip

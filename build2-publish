@@ -9,8 +9,8 @@ echo add in autologin method
 
 # rename docker image so it can be pushed to private repo
 
-docker tag hccm-test  murdochr/dog
+#docker tag hccm-test  murdochr/dog
 
-docker push murdochr/dog
+docker push murdochr/hccm
 
 
