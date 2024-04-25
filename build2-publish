@@ -1,6 +1,7 @@
 #!/bin/bash
 
-docker login -u murdochr
+# cred needs to be added to this place (no return)
+docker login -u murdochr -p $(cat ~/docker-creds)
 
 echo add in autologin method
 
