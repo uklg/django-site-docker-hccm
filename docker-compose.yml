@@ -1,7 +1,8 @@
 version: '3.8'
 services:
   web:
-    build: .
+    #build: .
+    image: hccm-test:latest
     container_name: hccm-test
     volumes:
       - .:/app
@@ -25,7 +26,7 @@ services:
 
 #     command: /app/manage.py collectstatic
 #    command: /code/manage.py collectstatic
-    command: python3 manage.py migrate
+#    command: python3 manage.py migrate
 #    command: /app/expect
     #command: find /app
     command: python /code/manage.py runserver 0.0.0.0:8000
