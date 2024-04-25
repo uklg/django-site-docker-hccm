@@ -1,0 +1,16 @@
+#!/bin/bash
+
+docker login -u murdochr
+
+echo add in autologin method
+
+# WARNING! Your password will be stored unencrypted in /home/rm/.docker/config.json.
+
+
+# rename docker image so it can be pushed to private repo
+
+docker tag hccm-test  murdochr/dog
+
+docker push murdochr/dog
+
+
