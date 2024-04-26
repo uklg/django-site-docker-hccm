@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # cred needs to be added to this place (no return)
 docker login -u murdochr -p $(cat ~/docker-creds)
 
