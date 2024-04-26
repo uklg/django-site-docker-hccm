@@ -1,2 +1,4 @@
 .git
 media
+# ignore this as it is coming via k8 secrets
+#aws.env

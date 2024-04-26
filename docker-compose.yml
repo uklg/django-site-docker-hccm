@@ -3,7 +3,7 @@ services:
   web:
     #build: .
     image: murdochr/hccm
-    container_name: murdochr/hccm
+    container_name: hccm
     volumes:
       - .:/app
     #command: pip install django==3.1.14|grep pip
