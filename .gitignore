@@ -3,3 +3,4 @@ sendgrid.env
 aws.env
 db.sqlite3
 *~
+aws.env
