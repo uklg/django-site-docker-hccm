@@ -5,7 +5,7 @@
 ## using 4.0.5
 
 asgiref==3.7.0
-backports.zoneinfo==0.2.1
+backports.zoneinfo;python_version<"3.9"
 django==4.2.11
 django-debug-toolbar==3.5.0
 python-http-client==3.3.7
