@@ -17,7 +17,8 @@ urlpatterns = [
 
     path('__debug__/', include('debug_toolbar.urls')),
 
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    path('sitemap.xml', 
+          sitemap, {'sitemaps': sitemaps, 'template_name':'custom_sitemap.html'},
          name='django.contrib.sitemaps.views.sitemap')
 
 ]

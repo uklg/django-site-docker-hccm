@@ -41,12 +41,12 @@ accessport=8005
 docker build . -t $projectname
 
 
-retVal=$?
-if [ $retVal -ne 0 ]; then
-    echo "Build error"
-    exit
-fi
-exit $retVal
+#retVal=$?
+#if [ $retVal -ne 0 ]; then
+#    echo "Build error"
+#    exit
+#fi
+#exit $retVal
 
 
 echo make sure build is complete 
