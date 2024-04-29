@@ -13,3 +13,14 @@ cp -pr /usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin 
 Now these files can be added to the admin and added to git locally as they are in the repo now
 
 aws.env is needed  in root is needed for emails
+
+
+=== test the send module ===
+
+this module can be run with error and will not hang form submission or tested from command line:
+
+./ bootstrapclass.py
+
+refers to:
+
+module.p
