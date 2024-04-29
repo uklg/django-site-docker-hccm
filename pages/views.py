@@ -31,7 +31,7 @@ def contactViewD(request):
             submit_message = form.cleaned_data['submit_message']
             try:
                 
-                item="%s %s %s %s\n" % (submit_name, submit_email, submit_number, submit_message)
+                item="name: %s\n email: %s\n number: %s\n message: %s\n---\n" % (submit_name, submit_email, submit_number, submit_message)
                 print(item)
                 with open("requests.txt", "a") as myfile:
 
