@@ -5,6 +5,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.conf import settings
 import boto3
+# import custom sender module =====================================
+import module
+
 
 from django.urls import resolve
 
@@ -33,7 +36,10 @@ def contactViewD(request):
                 with open("requests.txt", "a") as myfile:
 
                     myfile.write(item)
-    
+                    # instanciate library class
+                    object = module.Send()
+                    object.sendmessage()
+
 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
