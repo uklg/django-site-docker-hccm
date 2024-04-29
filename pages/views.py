@@ -41,47 +41,6 @@ def contactViewD(request):
                         keypass=splitkey[1].strip()
                         return(keyid,keypass)
 
-                    try:
-                        creds=getsendmailapikey()
-                        client = boto3.client(
-                            'ses',
-                            region_name='eu-north-1',
-                            aws_access_key_id=creds[0],
-                            aws_secret_access_key=creds[1]
-                        )
-
-
-                        response = client.send_email(
-                            Destination={
-                                'ToAddresses': ['richmurdo@gmail.com'],
-                            },
-                            Message={
-                                'Body': {
-                                    'Text': {
-                                        'Charset': 'UTF-8',
-                                        'Data': f"Name: {submit_name} \nFrom email: {submit_email}\n \
-                                         {submit_number}\n{submit_message}",
-                                    },
-                                },
-                                'Subject': {
-                                    'Charset': 'UTF-8',
-                                    'Data': 'From hollyschildminding website',
-                                },
-                            },
-                            Source='sender@saturdaynightdj.co.uk',
-                        )
-
-
-
-
-                        print(response)
-                    except Exception as e:
-                        print(e.message)
-                    try:
-                        with open("mails.txt", "a") as myfile:
-                            myfile.write(f"{submit_name}, {submit_email}, {submit_number}, {submit_message}")
-                    except Exception as e:
-                        print(e.message)
 
                     print('not debug no email api setup') 
                     print(submit_name, submit_email, submit_number, submit_message, ['admin@example.com'])
