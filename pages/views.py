@@ -27,23 +27,9 @@ def contactViewD(request):
             submit_number = form.cleaned_data['submit_number']
             submit_message = form.cleaned_data['submit_message']
             try:
-                if settings.DEBUG:
-                    print(submit_name, submit_email, submit_number, submit_message, ['admin@example.com'])
-                else:
-                    #pass
-                    def getsendmailapikey():
-                        fd=open('aws.env','r')
-                        keyline=fd.readlines()[0].strip()
-                        delimiter=":"
-
-                        splitkey=keyline.split(delimiter)
-                        keyid=splitkey[0].strip()
-                        keypass=splitkey[1].strip()
-                        return(keyid,keypass)
 
 
-                    print('not debug no email api setup') 
-                    print(submit_name, submit_email, submit_number, submit_message, ['admin@example.com'])
+                print(submit_name, submit_email, submit_number, submit_message, ['admin@example.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('demolition')
