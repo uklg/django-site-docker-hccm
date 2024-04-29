@@ -26,7 +26,7 @@ class Send():
     def sendmessage(self,submit_name='mo',submit_email='''j@d.com''',submit_number='07', submit_message='hi'):
 
           try:
-              creds=getsendmailapikey()
+              creds=self.getsendmailapikey()
               client = boto3.client(
                   'ses',
                   region_name='eu-north-1',
