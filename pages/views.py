@@ -27,9 +27,14 @@ def contactViewD(request):
             submit_number = form.cleaned_data['submit_number']
             submit_message = form.cleaned_data['submit_message']
             try:
+                
+                item="%s %s %s %s\n" % (submit_name, submit_email, submit_number, submit_message)
+                print(item)
+                with open("requests.txt", "a") as myfile:
 
+                    myfile.write(item)
+    
 
-                print(submit_name, submit_email, submit_number, submit_message, ['admin@example.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('demolition')
