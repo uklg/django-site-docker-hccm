@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p 'docker hub password from local credentials store: ' password
+
+echo ${password} > ~/docker-creds
+
+
+docker login -u murdochr -p $(cat ~/docker-creds)
+
