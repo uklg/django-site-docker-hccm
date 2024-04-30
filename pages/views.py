@@ -38,7 +38,7 @@ def contactViewD(request):
                     myfile.write(item)
                     # instanciate library class
                     object = module.Send()
-                    object.sendmessage()
+                    object.sendmessage(submit_name,submit_email,submit_number,submit_message)
 
 
             except BadHeaderError:
