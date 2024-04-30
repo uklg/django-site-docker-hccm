@@ -37,7 +37,7 @@ class Send():
 
               response = client.send_email(
                   Destination={
-                      'ToAddresses': ['richmurdo@gmail.com'],
+                      'ToAddresses': ['richmurdo@gmail.com','hollycaston@googlemail.com'],
                   },
                   Message={
                       'Body': {
