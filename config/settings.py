@@ -25,7 +25,7 @@ SECRET_KEY = 'ot135y*1oz2+0gh9fib_hj8w+)q#r^x+nyegx7wli3d+=g46$p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['127.0.0.1','hollyschildcare.co.uk']
+ALLOWED_HOSTS = ['127.0.0.1','hollyschildcare.co.uk', 'hollyschildcare.saturdaynightdj.com']
 
 
 # Application definition
